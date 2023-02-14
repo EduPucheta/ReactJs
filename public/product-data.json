@@ -1,0 +1,36 @@
+[
+    {
+        "id": 10001,
+        "name": "Modelo EQ",
+        "price": "$2,000",
+        "category": "stands-para-computadoras",
+        "image": "../../assets/foto-eq.jpg",
+        "description": "Compuestos por dos piezas encastrables que elevan la pantalla a la altura de los ojos, ayudando a mejorar tu postura, evitando dolores después de una larga jornada frente a la compu!"
+    },
+    {
+        "id": 10002,
+        "name": "Modelo Curv",
+        "price": "$1,800",
+        "category": "stands-para-computadoras",
+        "image": "../../assets/foto-curv.jpg",
+        "description": "Nuesto último modelo listo para que lo saques a pasear."
+    }
+    ,
+    {
+        "id": 10003,
+        "name": "Modelo ISO",
+        "price": "$1,900",
+        "category": "stands-para-computadoras",
+        "image": "../../assets/foto-iso.jpg",
+        "description": "Cómodo y con toda la onda! 👌"
+    }
+    ,
+    {
+        "id": 10004,
+        "name": "Modelo MOV",
+        "price": "$1,200",
+        "category": "stands-para-celulares",
+        "image": "../../assets/foto-mov.jpg", 
+        "description": "Simple práctico y funcional, este soporte para celular es ideal para transportar a cualquier espacio."
+    }
+]

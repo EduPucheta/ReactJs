@@ -3,11 +3,12 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import CartWidget from '../CartWidget'
 import BrandLogo from '../brand-logo'
+import { Link } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Stands para laptops', href: '#', current: false },
-  { name: 'Stands para celulares', href: '#', current: false },
+  { name: 'Home', to: '/', current: false },
+  { name: 'Stands para laptops', to: '/categoria/stands-para-computadoras', current: false },
+  { name: 'Stands para celulares', to: '/categoria/stands-para-celulares', current: false },
 ]
 
 function classNames(...classes) {
@@ -27,7 +28,7 @@ export default function Navbar() {
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
+                  ) : ( 
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
@@ -37,9 +38,9 @@ export default function Navbar() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.to}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium no-underline'
@@ -47,7 +48,7 @@ export default function Navbar() {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -67,10 +68,10 @@ export default function Navbar() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
-                <Disclosure.Button
+                <Link 
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  as="Link"
+                  to={item.to}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium no-underline'
@@ -78,7 +79,7 @@ export default function Navbar() {
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
-                </Disclosure.Button>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>
