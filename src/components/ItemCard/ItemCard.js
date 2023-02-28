@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-export default function ItemCard({ data, key }) {
+export default function ItemCard({ data }) {
   return (
     <div className="flex justify-center flex-wrap m-0 md:m-4 ">
       <div className="w-60  bg-white border border-gray-200 rounded-lg shadow m-1">
         <Link to={`/producto/${data.id}`} className="flex justify-center">
           <img
-            class="p-8 rounded-t-lg h-50 center"
+            className="p-8 rounded-t-lg h-50 center"
             src={data.image}
             alt={data.name}
           />
