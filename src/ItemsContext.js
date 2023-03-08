@@ -10,37 +10,23 @@ export const ItemsProvider = ({ children }) => {
 
   //FUNCION PARA AGREGAR UN ITEM
 
-  const addToCart = (product) => {
-    const index = items.findIndex((item) => item.id === product.id);
-    console.log(index);
-    if (index === -1) {
-      setItems({
-        ...items,
-        quantity: 1,
-      });
-      const updateCart = [...items];
-      console.log(updateCart);
-    } else {
-      items[index].quantity += 1;
 
-      const updateCart2 = [...items];
-      console.log(updateCart2);
-    }
+  const addToCart = (item, newQuantity) => {
+    const newCart = items.filter((prod) => prod.id !== item.id);
+    newCart.push({ ...item, quantity: newQuantity });
+    setItems(newCart);
   };
 
   //TOTAL DE LA COMPRA
-  
+
   const totalCompra = (x) => {
     let total = 0;
     x.map((e) => {
-      
-        let monto = e.quantity * e.price;
-        total += monto       
-      });
-      return total 
-    }
-  
- 
+      let monto = e.quantity * e.price;
+      total += monto;
+    });
+    return total;
+  };
 
   return (
     <ItemsContext.Provider value={{ items, setItems, addToCart, totalCompra }}>

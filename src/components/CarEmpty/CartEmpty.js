@@ -5,7 +5,7 @@ import { faCow } from "@fortawesome/free-solid-svg-icons";
 export default function CartEmpty() {
 
 
- 
+
 
   return (
     <>
